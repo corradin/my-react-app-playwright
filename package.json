@@ -17,10 +17,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:headless": "npx cross-env BROWSER=none npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:e2e": "jest ./e2e",
-    "e2e": "npx start-server-and-test start http://localhost:3000 'test:e2e",
+    "e2e": "npx start-server-and-test start:headless http://localhost:3000 jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
