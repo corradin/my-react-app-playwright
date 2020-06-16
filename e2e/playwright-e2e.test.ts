@@ -7,14 +7,9 @@ describe('React app homepage', () => {
 
   beforeAll(async () => {
     browser = await chromium.launch({ headless: false });
-    //With Galaxy S5 The third test will fail
-    const pixel2 = devices['Galaxy S5'];
-    const context = await browser.newContext({
-      ...pixel2,
-    });
+    
     // Use the below line for desktop testing
-    // page = await browser.newPage();
-    page = await context.newPage();
+    page = await browser.newPage();
   });
 
   it('Should display the correct page title', async () => {
@@ -31,9 +26,31 @@ describe('React app homepage', () => {
     expect(messageContents).toBe('Edit src/App.tsx and save to reload.');
   });
 
-  it('should display the full link on mobile', async () => {
+  it('should display the full link on desktop', async () => {
     await page.goto(homeUrl);
     await page.click('#unclickable_link');
+  });
+
+  it('should display the full link on mobile', async () => {
+    //With Galaxy S5 The third test will fail
+    const galaxyS5 = devices['Galaxy S5'];
+    const context = await browser.newContext({
+      ...galaxyS5
+    });
+    page = await context.newPage();
+    
+    await page.goto(homeUrl);
+    await page.click('#unclickable_link');
+  });
+
+  it('should display the current local time', async () => {
+    // Emulate locale and time
+    const context = await browser.newContext({
+      locale: 'en-US',
+      timezoneId: 'America/Toronto'
+    });
+    const page = await context.newPage();
+    await page.goto(homeUrl);
   });
 
   afterAll(async () => {
