@@ -19,6 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:e2e": "jest ./e2e",
+    "e2e": "npx start-server-and-test start http://localhost:3000 'test:e2e",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -35,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "playwright": "^1.1.1",
+    "ts-jest": "^26.1.0"
   }
 }
