@@ -17,7 +17,7 @@ class DownloadFile extends React.Component {
   render() {
     return (
       <div id="container">
-        <button onClick={this.downloadRandomPicture}>Download Random Picture</button>
+        <button id="download-random-image" onClick={this.downloadRandomPicture}>Download Random Picture</button>
         <p />
       </div>
     );
