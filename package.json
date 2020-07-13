@@ -40,6 +40,6 @@
   },
   "devDependencies": {
     "playwright": "^1.1.1",
-    "ts-jest": "^26.1.0"
+    "ts-jest": "^26.1.1"
   }
 }

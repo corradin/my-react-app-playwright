@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CSS from 'csstype';
+import DownloadFile from './DownloadFile';
 
 type ClockState = {
   time: Date
@@ -59,6 +60,7 @@ class App extends React.Component<{}, ClockState> {
           >
             Learn React
           </a>
+          <DownloadFile />
         </header>
       </div>
     );
