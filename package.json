@@ -12,8 +12,9 @@
     "start:headless": "npx cross-env BROWSER=none npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "e2e": "npx start-server-and-test start:headless http://localhost:3000 jest",
-    "eject": "react-scripts eject"
+    "e2e": "npx start-server-and-test start:headless http://localhost:3000 playwright",
+    "eject": "react-scripts eject",
+    "playwright": "playwright test e2e/*"
   },
   "eslintConfig": {
     "extends": "react-app"

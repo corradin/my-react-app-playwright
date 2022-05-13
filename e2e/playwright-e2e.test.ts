@@ -1,28 +1,17 @@
-import { chromium, Browser, Page, devices } from 'playwright';
+import { Page, devices } from 'playwright';
+import { expect, test } from '@playwright/test';
 import * as fs from 'fs';
 
-describe('React app homepage', () => {
-  let browser: Browser;
+test.describe('React app homepage', () => {  
   let page: Page;
   const homeUrl = 'http://localhost:3000';
 
-  beforeAll(async () => {
-    browser = await chromium.launch({ headless: false });
-
-    // Use the below line for desktop testing
-    page = await browser.newPage({ acceptDownloads: true });
-  });
-
-  afterAll(async () => {
-    await browser.close();
-  });
-
-  it('Should display the correct page title', async () => {
+  test('Should display the correct page title', async ({ page }) => {
     await page.goto(homeUrl);
     expect(await page.title()).toBe('React App');
   });
 
-  it('should display message', async () => {
+  test('should display message', async ({ page }) => {
     await page.goto(homeUrl);
     const messageContents = await page.$eval(
       '#root .App-header p',
@@ -31,7 +20,7 @@ describe('React app homepage', () => {
     expect(messageContents).toBe('Edit src/App.tsx and save to reload.');
   });
 
-  it('should display the full link on mobile', async () => {
+  test('should display the full link on mobile', async ({ browser }) => {
     const galaxyS5 = devices['Galaxy S5'];
     const context = await browser.newContext({
       ...galaxyS5,
@@ -42,7 +31,7 @@ describe('React app homepage', () => {
     await page.click('#unclickable_link');
   });
 
-  it('should display the current local time', async () => {
+  test('should display the current local time', async ({ browser }) => {
     // Emulate locale and time
     const context = await browser.newContext({
       locale: 'en-US',
@@ -52,7 +41,7 @@ describe('React app homepage', () => {
     await page.goto(homeUrl);
   });
 
-  it('should request an image from picsum', async () => {
+  test('should request an image from picsum', async ({ page }) => {
     await page.goto(homeUrl);
     const [response, download] = await Promise.all([
       page.waitForResponse((response: { url: () => string | string[] }) =>
@@ -66,7 +55,7 @@ describe('React app homepage', () => {
     console.log(path);
   });
 
-  it('should download a random image', async () => {
+  test('should download a random image', async ({ page }) => {
     await page.goto(homeUrl);
     const [response, download] = await Promise.all([
       page.waitForResponse((response: { url: () => string | string[] }) =>
@@ -76,10 +65,12 @@ describe('React app homepage', () => {
       page.click('button#download-random-image'),
     ]);
 
-    const responseHeaders = response.headers() as { [key: string]: string; };
+    const responseHeaders = response.headers() as { [key: string]: string };
     const downloadId = responseHeaders.location.split('/')[4];
     const readStream = await download.createReadStream();
-    const writeStream = fs.createWriteStream(`./e2e/downloads/randomImage_${downloadId}.jpg`);
+    const writeStream = fs.createWriteStream(
+      `./e2e/downloads/randomImage_${downloadId}.jpg`
+    );
     readStream?.pipe(writeStream);
   });
 });
