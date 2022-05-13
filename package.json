@@ -3,17 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,7 +31,14 @@
     ]
   },
   "devDependencies": {
-    "playwright": "^1.1.1",
-    "ts-jest": "^26.1.1"
+    "@playwright/test": "^1.22.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@types/jest": "^27.5.1",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "csstype": "^3.0.11",
+    "playwright": "^1.22.0",
+    "typescript": "^4.6.4"
   }
 }
