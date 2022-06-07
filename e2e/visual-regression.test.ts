@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-test.use({ launchOptions: { slowMo: 1000 } });
-
 test('example test', async ({ page }) => {
   await page.goto('http://localhost:3000');
-  await expect(page).toHaveScreenshot();
+  await page.waitForLoadState('networkidle');
+  await expect(page).toHaveScreenshot({
+    maxDiffPixelRatio: 0,
+    mask: [page.locator('data-test-id=random-game-image')],
+  });
 });
