@@ -3,7 +3,7 @@ import { Button } from '../src/Button';
 
 test('Button renders', async ({ mount }) => {
   const button = await mount(<Button label="Testing button" />);
-  await expect(button).toContainText('Testing butston');
+  await expect(button).toContainText('Testing button');
 });
 
 test('CLick handler fires', async ({ mount }) => {
