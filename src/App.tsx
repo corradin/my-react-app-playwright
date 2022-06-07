@@ -3,10 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import CSS from 'csstype';
 import DownloadFile from './DownloadFile';
+import { Button } from './Button';
 
 type ClockState = {
-  time: Date
-}
+  time: Date;
+};
 
 class App extends React.Component<{}, ClockState> {
   intervalID: NodeJS.Timeout = setTimeout(() => {}, 0);
@@ -14,7 +15,7 @@ class App extends React.Component<{}, ClockState> {
   constructor(props: Readonly<App>) {
     super(props);
     this.state = {
-      time: new Date()
+      time: new Date(),
     };
   }
 
@@ -26,7 +27,7 @@ class App extends React.Component<{}, ClockState> {
   }
   tick() {
     this.setState({
-      time: new Date()
+      time: new Date(),
     });
   }
 
@@ -40,6 +41,13 @@ class App extends React.Component<{}, ClockState> {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <Button
+            label="An awesome button"
+            backgroundColor="white"
+            onClick={() => {
+              alert('You clicked an awesome button');
+            }}
+          />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
@@ -49,9 +57,7 @@ class App extends React.Component<{}, ClockState> {
               OK
             </a>
           </div>
-          <p>
-            The time is {this.state.time.toLocaleString()}.
-          </p>
+          <p>The time is {this.state.time.toLocaleString()}.</p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -61,7 +67,11 @@ class App extends React.Component<{}, ClockState> {
             Learn React
           </a>
           <DownloadFile />
-          <img data-test-id="random-game-image" src="https://api.lorem.space/image/game?w=250" alt="random-game-poster"/>
+          <img
+            data-test-id="random-game-image"
+            src="https://api.lorem.space/image/game?w=250"
+            alt="random-game-poster"
+          />
         </header>
       </div>
     );
