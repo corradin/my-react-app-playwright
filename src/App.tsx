@@ -61,6 +61,7 @@ class App extends React.Component<{}, ClockState> {
             Learn React
           </a>
           <DownloadFile />
+          <img data-test-id="random-game-image" src="https://api.lorem.space/image/game?w=250" alt="random-game-poster"/>
         </header>
       </div>
     );
