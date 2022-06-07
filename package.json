@@ -14,7 +14,8 @@
     "test": "react-scripts test",
     "e2e": "npx start-server-and-test start:headless http://localhost:3000 playwright",
     "eject": "react-scripts eject",
-    "playwright": "playwright test e2e/*"
+    "playwright": "playwright test e2e/*",
+    "playwright:vr": "playwright test e2e/visual-regression.test.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
