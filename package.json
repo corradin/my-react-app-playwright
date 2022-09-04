@@ -15,7 +15,8 @@
     "e2e": "npx start-server-and-test start:headless http://localhost:3000 playwright",
     "eject": "react-scripts eject",
     "playwright": "playwright test e2e/*",
-    "playwright:vr": "playwright test e2e/visual-regression.test.ts"
+    "playwright:vr": "playwright test e2e/visual-regression.test.ts",
+    "playwright:ct": "playwright test e2e/Button.test.tsx -c playwright-ct.config.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.22.2",
     "@playwright/test": "^1.22.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",

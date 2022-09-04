@@ -1,3 +1,7 @@
+// Visual regression testing
+// Use npx playwright test e2e/visual-regression.test.ts --reporter=html
+// npx playwright test e2e/visual-regression.test.ts --update-snapshots
+
 import { test, expect } from '@playwright/test';
 
 test('example test', async ({ page }) => {
