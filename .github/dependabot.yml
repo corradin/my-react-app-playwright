@@ -13,5 +13,5 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: 'daily'
-    registries::
+    registries:
       - npm-npmjs
