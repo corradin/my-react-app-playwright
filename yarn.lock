@@ -1088,10 +1088,10 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@corradin/poc-packages-monorepo-ui-github@^0.0.1":
-  version "0.0.1"
-  resolved "https://npm.pkg.github.com/download/@corradin/poc-packages-monorepo-ui-github/0.0.1/4a310ff01b9d0bbdfee9845aa7015c9021b8dfbc"
-  integrity sha512-CU2jgulE6Jm3YoR8G8XOb3/Tbkkg1GAWhSxrjHBcKkO/ghPkx1SZHSPDIlVSR5SH1KOK33+MpUt9pauwXkpmUg==
+"@corradin/poc-packages-monorepo-ui-github@^1.0.0":
+  version "1.0.0"
+  resolved "https://npm.pkg.github.com/download/@corradin/poc-packages-monorepo-ui-github/1.0.0/c5653ff3bf7b13aba029c4722156df9e852f06a7#c5653ff3bf7b13aba029c4722156df9e852f06a7"
+  integrity sha512-YttTY8i0YGDbrw/trQADgFFoWnd21ntuGUCZUqubfweYgpmxLt0cwlFLs8BQN8blqkYDaliXcq0Djyy0DaymGw==
   dependencies:
     react "^18.2.0"
 
