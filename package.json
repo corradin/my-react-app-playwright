@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.1.0",
+    "@corradin/poc-packages-monorepo-ui": "^0.0.7",
+    "react": "^18.1.0",
+    "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1"
   },
   "scripts": {
@@ -35,14 +36,14 @@
   },
   "devDependencies": {
     "@playwright/experimental-ct-react": "^1.22.2",
-    "@playwright/test": "^1.22.0",
+    "@playwright/test": "^1.26.0",
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
+    "@testing-library/react": "^15.0.7",
     "@types/jest": "^27.5.1",
-    "@types/react": "^18.0.18",
-    "@types/react-dom": "^18.0.4",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.3.0",
     "csstype": "^3.0.11",
-    "playwright": "^1.22.0",
+    "playwright": "^1.26.0",
     "typescript": "^4.6.4"
   }
 }
