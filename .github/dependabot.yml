@@ -1,10 +1,10 @@
 version: 2
-registries:
-  npm-npmjs:
-    type: npm-registry
-    url: https://npm.pkg.github.com
-    token: ${{ secrets.PACKAGES_GITHUB_READONLY }}
-    replaces-base: true
+# registries:
+#   npm-npmjs:
+#     type: npm-registry
+#     url: https://npm.pkg.github.com
+#     token: ${{ secrets.PACKAGES_GITHUB_READONLY }}
+#     replaces-base: true
 updates:
   # Enable version updates for npm
   - package-ecosystem: 'npm'
