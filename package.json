@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@playwright/experimental-ct-react": "^1.47.0",
-    "@playwright/test": "^1.26.0",
+    "@playwright/test": "^1.47.1",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^15.0.7",
     "@types/jest": "^29.5.12",
